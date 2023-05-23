@@ -1,0 +1,27 @@
+apiVersion: admissionregistration.k8s.io/v1alpha1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: required-labels
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+      - apiGroups:   ["apps"]
+        apiVersions: ["v1"]
+        operations:  ["CREATE", "UPDATE"]
+        resources:   ["deployments"]
+  validations:
+    - expression: |
+        has(object.metadata.labels) &&
+        ['mycompany.com/squad', 'mycompany.com/component'].all(label,
+          label in object.metadata.labels
+        )
+---
+apiVersion: admissionregistration.k8s.io/v1alpha1
+kind: ValidatingAdmissionPolicyBinding
+metadata:
+  name: required-labels
+spec:
+  policyName: required-labels
+  validationActions: [Deny]
+  matchResources: {}
