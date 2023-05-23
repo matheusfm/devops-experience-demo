@@ -1,6 +1,6 @@
 # `ValidatingAdmissionPolicy` demo
 
-1. Create a k8s cluster on version 1.27.2 with Kind, enabling `ValidatingAdmissionPolicy` feature gate.
+1. Create a k8s cluster on version `1.27.2` with Kind, enabling `ValidatingAdmissionPolicy` feature gate.
 ```shell
 kind create cluster --config kind-config.yaml
 ```
