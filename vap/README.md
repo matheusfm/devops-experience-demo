@@ -11,7 +11,7 @@ kubectl apply -f vap-replicas.yaml
 kubectl apply -f vap-labels.yaml
 ```
 
-3. Apply a valid `Deployment` with less than 5 replicas and without the required labels.
+3. Apply a `Deployment`.
 ```shell
 kubectl apply -f deployment.yaml
 ```
