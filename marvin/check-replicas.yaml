@@ -1,0 +1,11 @@
+id: max-replicas
+message: "Replicas limit"
+severity: Medium
+match:
+  resources:
+    - group: apps
+      version: v1
+      resource: deployments
+validations:
+  - expression: "object.spec.replicas <= 5"
+    message: "Deployment with more than 5 replicas"
