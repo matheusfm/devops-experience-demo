@@ -11,7 +11,7 @@ kubectl apply -f vap-replicas.yaml
 kubectl apply -f vap-labels.yaml
 ```
 
-3. Apply a `Deployment`.
+3. Try to apply a `Deployment`.
 ```shell
 kubectl apply -f deployment.yaml
 ```
