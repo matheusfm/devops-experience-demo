@@ -1,5 +1,7 @@
 # Marvin and `ValidatingAdmissionPolicy` demo
 
+This repository contains the commands and examples used in our talk at [DevOps Experience](https://www.youtube.com/@devopsheroes).
+
 ## Creating a k8s cluster with [Kind](https://kind.sigs.k8s.io/)
 
 The command below creates a k8s cluster on version `1.27.2` with [Kind](https://kind.sigs.k8s.io/).
